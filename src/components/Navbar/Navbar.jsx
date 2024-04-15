@@ -5,23 +5,23 @@ import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
-    console.log(user)
-    
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     const navLinks = <>
         <li className="text-lg"><NavLink to="/">Home</NavLink></li>
         <li className="text-lg"><NavLink to="/update-profile">Update Profile</NavLink></li>
     </>
 
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(result =>{
-    //             console.log(result.user)
-    //         })
-    //         .catch(error => {
-    //             console.log(error)
-    //         })
-    // }
+
 
     return (
         <div className="navbar bg-base-100">
@@ -42,21 +42,20 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                { user ?
+                {user ?
                     <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full tooltip" data-tip="hello">
+                                <img  alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
                         </div>
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <li><Link>Profile</Link></li>
+                            <li><Link to="/login"><button onClick={handleLogOut}>Logout</button></Link></li>
+                        </ul>
                     </div>
-                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-
-                        <li><Link>Profile</Link></li>
-                        <li><Link to="/login"><button onClick={logOut}>Logout</button></Link></li>
-                    </ul>
-                </div>
-                :
-                <Link to="/login"><button className="btn btn-success text-white">Login</button></Link>
+                    :
+                    <Link to="/login"><button className="btn btn-success text-white">Login</button></Link>
                 }
             </div>
         </div>

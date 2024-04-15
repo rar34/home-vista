@@ -4,6 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Login = () => {
 
     const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
@@ -17,33 +21,33 @@ const Login = () => {
         const { email, password } = data;
 
         signInUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                toast("login successful")
             })
-            .catch(error => {
-                console.log(error)
+            .catch(() => {
+                toast("invalid-credential")
             })
     }
 
     // sign in with google
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                toast("login successful")
             })
-            .catch(error => {
-                console.log(error)
+            .catch(() => {
+                toast("invalid-credential")
             })
     }
 
     // sign in with github
     const handleGitHubLogin = () => {
         gitHubLogin()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                toast("login successful")
             })
-            .catch(error => {
-                console.log(error)
+            .catch(() => {
+                toast("invalid-credential")
             })
     }
 
@@ -82,6 +86,7 @@ const Login = () => {
                         <p>Do not have an account ? <Link className="text-[#1DD100] font-bold" to="/register">Sign Up</Link> for free</p>
                     </div>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );

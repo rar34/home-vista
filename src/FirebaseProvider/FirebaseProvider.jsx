@@ -39,9 +39,8 @@ const FirebaseProvider = ({ children }) => {
 
      // log out
      const logOut = () => {
-        
         setUser(null)
-        return signOut(auth)
+        return signOut(auth);
     }
 
 
@@ -49,7 +48,7 @@ const FirebaseProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                setLoading(false)
+                // setLoading(false)
                 setUser(user)
             }
         });
