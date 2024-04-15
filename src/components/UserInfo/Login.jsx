@@ -28,8 +28,8 @@ const Login = () => {
                     <div className="px-6 py-2">
                         <p className="my-3 text-center font-bold">OR</p>
 
-                        <button className="rounded-lg flex items-center btn btn-success w-full md:w-full p-2 mx-auto text-center text-white mb-4"><FaGoogle /> Continue with google</button>
-                        <button className="rounded-lg flex items-center btn btn-success w-full md:w-full p-2 mx-auto text-center text-white mb-4"><FaGithub /> Continue with google</button>
+                        <button className="rounded-lg flex items-center btn btn-success w-full md:w-full p-2 mx-auto text-center text-white mb-4"><FaGoogle className="text-xl" /> Continue with google</button>
+                        <button className="rounded-lg flex items-center btn btn-success w-full md:w-full p-2 mx-auto text-center text-white mb-4"><FaGithub className="text-xl" /> Continue with gitHub</button>
                         <p>Do not have an account ? <Link className="text-[#1DD100] font-bold" to="/register">Sign Up</Link> for free</p>
                     </div>
                 </div>
