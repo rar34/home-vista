@@ -16,7 +16,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl md:text-3xl font-medium md:font-bold">HomeVista</a>
+                <Link to="/" className="btn btn-ghost text-xl md:text-3xl font-medium md:font-bold text-gray-700">Home<span className="text-[#1DD100]">Vista</span></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -36,7 +36,7 @@ const Navbar = () => {
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
-                <Link to="/login"><button className="bg-green-700 px-3 py-1 rounded-lg text-white">Login</button></Link>
+                <Link to="/login"><button className="bg-[#1DD100] px-7 py-3 rounded-lg text-white">Login</button></Link>
             </div>
         </div>
     );
