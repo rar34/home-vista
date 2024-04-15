@@ -13,7 +13,15 @@ const Register = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        console.log(data)
+        const { email, password } = data;
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
 
@@ -28,31 +36,31 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Name</span>
                             </label>
-                            <input type="text" placeholder="name" className="input input-bordered" 
-                            {...register("name")} />
+                            <input type="text" placeholder="name" className="input input-bordered"
+                                {...register("name")} />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered"  
-                            {...register("email", { required: true })}/>
-                            {errors.name && <span className="text-red-600">This field is required</span>}
+                            <input type="email" placeholder="email" className="input input-bordered"
+                                {...register("email", { required: true })} />
+                            {errors.email && <span className="text-red-600">This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">PhotoURL</span>
                             </label>
-                            <input type="text" placeholder="photoURL" className="input input-bordered" 
-                            {...register("photoURL")}/>
+                            <input type="text" placeholder="photoURL" className="input input-bordered"
+                                {...register("photoURL")} />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered"  
-                            {...register("password", { required: true })}/>
-                            {errors.name && <span className="text-red-600">This field is required</span>}
+                            <input type="password" placeholder="password" className="input input-bordered"
+                                {...register("password", { required: true })} />
+                            {errors.password && <span className="text-red-600">This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-success text-white font-medium">Login</button>
