@@ -9,9 +9,9 @@ const Footer = () => {
             </aside>
             <nav>
                 <h6 className="footer-title">Contact info</h6>
-                <p>Call-centre: 1 (323) 938-5798</p>
+                <p>Call-centre: 1 (323)25 4121</p>
                 <p>Fax: 1 (888) 637-7262</p>
-                <p>Email: info@styleixthemes.com</p>
+                <p>Email: info@homevista.com</p>
 
                 <p>1840 E Garvey Avenue Street, <br /> West Covina, CA 91791, U.S.</p>
 
