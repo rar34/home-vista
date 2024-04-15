@@ -6,11 +6,7 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
 
-    const { signInUser, loading, googleLogin, gitHubLogin } = useContext(AuthContext);
-
-    if (loading) {
-        <p>loading.........</p>
-    }
+    const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
 
     const {
         register,

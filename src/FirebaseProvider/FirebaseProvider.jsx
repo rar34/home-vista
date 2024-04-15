@@ -27,19 +27,23 @@ const FirebaseProvider = ({ children }) => {
     }
 
     // google login
-    const googleLogin = () =>{
+    const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
     }
 
     // gitHub login
-    const gitHubLogin = () =>{
+    const gitHubLogin = () => {
         return signInWithPopup(auth, gitHubProvider)
     }
 
-    // log out
-    const logOut = () =>{
+
+     // log out
+     const logOut = () => {
+        
+        setUser(null)
         return signOut(auth)
     }
+
 
     // Observer
     useEffect(() => {
@@ -49,10 +53,13 @@ const FirebaseProvider = ({ children }) => {
                 setUser(user)
             }
         });
-        return ()=>{
+        return () => {
             unSubscribe();
         }
     }, []);
+
+   
+
 
 
     const authInfo = {
