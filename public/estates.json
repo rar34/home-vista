@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Villa with Ocean View",
+      "segment": "Single-family homes",
+      "description": "Stunning luxury villa with breathtaking ocean views. Spacious living areas, modern kitchen, and private swimming pool.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "4500 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["living room", "swimming pool", "kitchen"],
+      "image": "https://example.com/images/villa1.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Cozy Townhouse in Historic District",
+      "segment": "Townhouses",
+      "description": "Charming townhouse located in a historic district. Renovated interior with exposed brick walls and a cozy fireplace.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Boston, Massachusetts",
+      "facilities": ["living room", "kitchen"],
+      "image": "https://example.com/images/townhouse1.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Modern Downtown Apartment",
+      "segment": "Apartments",
+      "description": "Sleek and modern apartment in the heart of the city. Floor-to-ceiling windows offer panoramic city views.",
+      "price": "$2,500/month",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "New York City, New York",
+      "facilities": ["living room", "kitchen"],
+      "image": "https://example.com/images/apartment1.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Student Housing Near Campus",
+      "segment": "Student housing",
+      "description": "Convenient student housing just steps away from campus. Fully furnished with modern amenities.",
+      "price": "$800/month",
+      "status": "rent",
+      "area": "600 sq ft",
+      "location": "Austin, Texas",
+      "facilities": ["living room", "kitchen"],
+      "image": "https://example.com/images/studenthousing1.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Senior Living Community with Wellness Center",
+      "segment": "Senior living communities",
+      "description": "Active senior living community with a focus on wellness. On-site fitness center, walking trails, and social activities.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Scottsdale, Arizona",
+      "facilities": ["living room", "kitchen", "swimming pool"],
+      "image": "https://example.com/images/seniorliving1.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Beachfront Vacation Rental",
+      "segment": "Vacation rentals",
+      "description": "Relaxing beachfront vacation rental with panoramic ocean views. Ideal for a family getaway.",
+      "price": "$300/night",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Maui, Hawaii",
+      "facilities": ["living room", "kitchen", "swimming pool"],
+      "image": "https://example.com/images/vacationrental1.jpg"
+    }
+  ]
+  
