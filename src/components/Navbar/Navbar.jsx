@@ -43,13 +43,14 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {user ?
-                    <div className="dropdown dropdown-end">
+                    <div className="dropdown dropdown-end tooltip" data-tip={user?.email || user?.displayName}>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full tooltip" data-tip="hello">
+                            <div className="w-10 rounded-full ">
                                 <img  alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                             </div>
+                            
                         </div>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-32">
                             <li><Link>Profile</Link></li>
                             <li><Link to="/login"><button onClick={handleLogOut}>Logout</button></Link></li>
                         </ul>
@@ -57,6 +58,7 @@ const Navbar = () => {
                     :
                     <Link to="/login"><button className="btn btn-success text-white">Login</button></Link>
                 }
+                
             </div>
         </div>
     );
