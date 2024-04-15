@@ -36,7 +36,7 @@ const Navbar = () => {
                         <li><a>Logout</a></li>
                     </ul>
                 </div>
-                <Link to="/login"><button className="bg-[#1DD100] px-7 py-3 rounded-lg text-white">Login</button></Link>
+                <Link to="/login"><button className="btn btn-success text-white">Login</button></Link>
             </div>
         </div>
     );
