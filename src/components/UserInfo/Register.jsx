@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false)
 
     const navigate = useNavigate();
     const { createUser } = useContext(AuthContext)
@@ -22,10 +23,10 @@ const Register = () => {
         if (password.length < 6) {
             return toast('Password must be 6 character long')
         }
-        else if(!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             return toast("Your password should at least one uppercase character")
         }
-        else if(!/[a-z]/.test(password)){
+        else if (!/[a-z]/.test(password)) {
             return toast("Your password should at least one lowercase character")
         }
         createUser(email, password)
@@ -70,12 +71,21 @@ const Register = () => {
                             <input type="text" placeholder="photoURL" className="input input-bordered"
                                 {...register("photoURL")} />
                         </div>
+                        {/* password field */}
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered"
-                                {...register("password", { required: true })} />
+                            <div className="relative">
+                                <input type={showPassword ? "text" : "password"} placeholder="password" className="input w-full input-bordered"
+                                    {...register("password", { required: true })} />
+                                <span onClick={() => setShowPassword(!showPassword)} className="absolute top-4 right-3">
+                                    {
+                                        showPassword ? <FaEyeSlash /> : <FaEye />
+                                    }
+                                </span>
+                            </div>
+
                             {errors.password && <span className="text-red-600">This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
@@ -84,7 +94,7 @@ const Register = () => {
                     </form>
                     <p>Already have an account ? <Link className="text-[#1DD100] font-bold" to="/login">Login</Link></p>
                 </div>
-                
+
             </div>
             <ToastContainer />
         </div>
