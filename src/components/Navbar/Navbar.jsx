@@ -24,9 +24,9 @@ const Navbar = () => {
             return isActive ? { color: "plum" } : {};
         }} to="/update-profile">Update Profile</NavLink></li>
 
-        {user && <li className="text-lg"><NavLink style={({ isActive }) => {
+        {/* {user && <li className="text-lg"><NavLink style={({ isActive }) => {
             return isActive ? { color: "plum" } : {};
-        }} to="/estate-details">Estate Details</NavLink></li>}
+        }} to="/estate-details">Estate Details</NavLink></li>} */}
     </>
 
 

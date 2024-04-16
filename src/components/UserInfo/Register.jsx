@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
+    const navigate = useNavigate();
     const { createUser } = useContext(AuthContext)
 
     const {
@@ -14,13 +19,24 @@ const Register = () => {
     } = useForm()
     const onSubmit = (data) => {
         const { email, password } = data;
-
+        if (password.length < 6) {
+            return toast('Password must be 6 character long')
+        }
+        else if(!/[A-Z]/.test(password)){
+            return toast("Your password should at least one uppercase character")
+        }
+        else if(!/[a-z]/.test(password)){
+            return toast("Your password should at least one lowercase character")
+        }
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate("/")
+                toast("User created successfully")
             })
             .catch(error => {
                 console.log(error)
+                toast(error.message)
             })
     }
 
@@ -68,7 +84,9 @@ const Register = () => {
                     </form>
                     <p>Already have an account ? <Link className="text-[#1DD100] font-bold" to="/login">Login</Link></p>
                 </div>
+                
             </div>
+            <ToastContainer />
         </div>
     );
 };

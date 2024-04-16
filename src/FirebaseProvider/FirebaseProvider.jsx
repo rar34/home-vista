@@ -39,6 +39,7 @@ const FirebaseProvider = ({ children }) => {
 
      // log out
      const logOut = () => {
+        setLoading(true)
         setUser(null)
         return signOut(auth);
     }
@@ -50,6 +51,7 @@ const FirebaseProvider = ({ children }) => {
             if (user) {
                 // setLoading(false)
                 setUser(user)
+                setLoading(false)
             }
         });
         return () => {

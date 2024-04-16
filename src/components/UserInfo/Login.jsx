@@ -3,6 +3,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
+import { useNavigate, Navigate, useLocation } from "react-router-dom";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +12,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+
 
     const {
         register,
@@ -23,6 +27,7 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 toast("login successful")
+                navigate('/')
             })
             .catch(() => {
                 toast("invalid-credential")
@@ -32,8 +37,11 @@ const Login = () => {
     // sign in with google
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(() => {
+            .then((result) => {
                 toast("login successful")
+                if (result.user) {
+                    <Navigate to={location?.state || "/"}></Navigate>
+                }
             })
             .catch(() => {
                 toast("invalid-credential")
