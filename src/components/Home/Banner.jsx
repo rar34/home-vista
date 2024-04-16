@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,13 +11,17 @@ const Banner = () => {
     return (
         <div className='my-10'>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay]}
                 spaceBetween={50}
                 effect="fade"
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
+                loop={true}
+                autoplay={
+                    {delay: 2000}
+                }
             >
                 
 

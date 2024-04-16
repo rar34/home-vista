@@ -47,16 +47,16 @@ const Register = () => {
             <div className="hero-content">
 
                 <div className="card shrink-0 w-full p-2 md:p-6 bg-base-100">
-                    <h2 className="text-3xl font-bold text-center">Register Now!!!</h2>
+                    <h2 className="text-3xl font-bold text-center" data-aos="fade-up" data-aos-delay="400">Register Now!!!</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                        <div className="form-control">
+                        <div className="form-control" data-aos="fade-left" data-aos-delay="400">
                             <label className="label">
                                 <span className="label-text font-semibold">Name</span>
                             </label>
                             <input type="text" placeholder="name" className="input input-bordered"
                                 {...register("name")} />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control" data-aos="fade-right" data-aos-delay="400">
                             <label className="label">
                                 <span className="label-text font-semibold">Email</span>
                             </label>
@@ -64,7 +64,7 @@ const Register = () => {
                                 {...register("email", { required: true })} />
                             {errors.email && <span className="text-red-600">This field is required</span>}
                         </div>
-                        <div className="form-control">
+                        <div className="form-control" data-aos="fade-left" data-aos-delay="400">
                             <label className="label">
                                 <span className="label-text font-semibold">PhotoURL</span>
                             </label>
@@ -72,7 +72,7 @@ const Register = () => {
                                 {...register("photoURL")} />
                         </div>
                         {/* password field */}
-                        <div className="form-control">
+                        <div className="form-control" data-aos="fade-right" data-aos-delay="400">
                             <label className="label">
                                 <span className="label-text font-semibold">Password</span>
                             </label>
@@ -95,8 +95,8 @@ const Register = () => {
                     <p>Already have an account ? <Link className="text-[#1DD100] font-bold" to="/login">Login</Link></p>
                 </div>
 
+                <ToastContainer />
             </div>
-            <ToastContainer />
         </div>
     );
 };
