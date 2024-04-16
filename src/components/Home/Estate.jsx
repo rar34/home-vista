@@ -2,11 +2,14 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 const Estate = ({ estate }) => {
-    const { estate_title, image } = estate;
+    const { estate_title, image, status } = estate;
     console.log(estate);
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img src={image} alt="" /></figure>
+            <figure className='relative'>
+                <img src={image} alt="" />
+                <p className='absolute top-3 right-3 bg-neutral shadow-md px-5 py-2 text-white font-bold text-xl rounded-md'>{status}</p>
+            </figure>
             <div className="card-body">
                 <h2 className="card-title">{estate_title}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
