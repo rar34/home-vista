@@ -4,7 +4,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-neutral text-white">
             <aside>
                 <h6 className="footer-title">About</h6>
-                <p>
+                <p className="text-sm">
                     HomeVista: Your destination for dream homes. <br /> Diverse residential listings, expert guidance, <br /> and personalized service ensure a <br /> seamless experience. Find yours today!</p>
             </aside>
             <nav>

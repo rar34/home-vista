@@ -30,7 +30,7 @@ const Register = () => {
             <div className="hero-content">
 
                 <div className="card shrink-0 w-full p-2 md:p-6 bg-base-100">
-                    <h2 className="text-3xl font-bold text-center">Registration Now!!!</h2>
+                    <h2 className="text-3xl font-bold text-center">Register Now!!!</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -63,7 +63,7 @@ const Register = () => {
                             {errors.password && <span className="text-red-600">This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-success text-white font-medium">Login</button>
+                            <button className="btn btn-success text-white font-medium">Register</button>
                         </div>
                     </form>
                     <p>Already have an account ? <Link className="text-[#1DD100] font-bold" to="/login">Login</Link></p>

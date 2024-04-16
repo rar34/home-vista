@@ -11,6 +11,8 @@ import Login from './components/UserInfo/Login.jsx';
 import Register from './components/UserInfo/Register.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider.jsx';
+import EstateDetails from './components/Home/EstateDetails.jsx';
+import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=> fetch('/estates.json')
       },
       {
         path: "/login",
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/estate-details",
+        element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>
       }
     ]
   },

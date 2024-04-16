@@ -9,7 +9,7 @@
       "area": "4500 sq ft",
       "location": "Malibu, California",
       "facilities": ["living room", "swimming pool", "kitchen"],
-      "image": "https://example.com/images/villa1.jpg"
+      "image": "https://i.ibb.co/XLqWtZS/1.jpg"
     },
     {
       "id": 2,
@@ -21,7 +21,7 @@
       "area": "1800 sq ft",
       "location": "Boston, Massachusetts",
       "facilities": ["living room", "kitchen"],
-      "image": "https://example.com/images/townhouse1.jpg"
+      "image": "https://i.ibb.co/KF4tyPk/2.jpg"
     },
     {
       "id": 3,
@@ -33,7 +33,7 @@
       "area": "1000 sq ft",
       "location": "New York City, New York",
       "facilities": ["living room", "kitchen"],
-      "image": "https://example.com/images/apartment1.jpg"
+      "image": "https://i.ibb.co/Qp4c969/3.jpg"
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
       "area": "600 sq ft",
       "location": "Austin, Texas",
       "facilities": ["living room", "kitchen"],
-      "image": "https://example.com/images/studenthousing1.jpg"
+      "image": "https://i.ibb.co/ypnSYwf/4.jpg"
     },
     {
       "id": 5,
@@ -57,7 +57,7 @@
       "area": "1200 sq ft",
       "location": "Scottsdale, Arizona",
       "facilities": ["living room", "kitchen", "swimming pool"],
-      "image": "https://example.com/images/seniorliving1.jpg"
+      "image": "https://i.ibb.co/d2jR6SD/5.jpg"
     },
     {
       "id": 6,
@@ -69,7 +69,7 @@
       "area": "2000 sq ft",
       "location": "Maui, Hawaii",
       "facilities": ["living room", "kitchen", "swimming pool"],
-      "image": "https://example.com/images/vacationrental1.jpg"
+      "image": "https://i.ibb.co/Q9tZqVr/6.jpg"
     }
   ]
   
