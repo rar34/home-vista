@@ -12,7 +12,7 @@ AOS.init();
 
 const Root = () => {
     return (
-        <div className="max-w-7xl mx-auto py-3">
+        <div className="max-w-7xl p-2 mx-auto py-3">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
