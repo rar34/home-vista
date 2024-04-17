@@ -24,8 +24,8 @@ const EstateDetails = () => {
     return (
         <div className="hero my-6 bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
-                <img src={image} className=" lg:h-[420px] rounded-lg shadow-lg" />
-                <div>
+                <img data-aos="flip-left" data-aos-delay="400" src={image} className=" lg:h-[420px] rounded-lg shadow-lg" />
+                <div data-aos="flip-right" data-aos-delay="800">
                     <h4 className="text-2xl mb-2 font-semibold text-gray-500">Available for: <span className='text-[#23BE0A] bg-[#23BE0A0D]'>{status}</span></h4>
                     <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">{estate_title}</h1>
                     <p className='font-semibold my-4'><span>Segment: </span> {segment}</p>

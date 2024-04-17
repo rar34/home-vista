@@ -12,11 +12,11 @@ const UserProfile = () => {
     return (
         <div className="card my-10 text-white md:min-h-[350px] lg:min-h-[500px] flex-col">
             <figure className="px-10 pt-10">
-                <img src={photoURL} alt="User profile picture is here" className="rounded-xl w-[200px]" />
+                <img data-aos="flip-left" data-aos-delay="500" src={photoURL} alt="User profile picture is here" className="rounded-xl w-[200px]" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">Name: {displayName}</h2>
-                <p>Email: {email}</p>
+                <h2 data-aos="fade-left" data-aos-delay="500" className="card-title">Name: {displayName}</h2>
+                <p data-aos="fade-right" data-aos-delay="500">Email: {email}</p>
                 <Link to="/update-profile"><button className="btn text-white btn-success">Update Profile</button></Link>
             </div>
         </div>
