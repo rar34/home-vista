@@ -24,7 +24,7 @@ const EstateDetails = () => {
             <div className="hero-content flex-col lg:flex-row">
                 <img src={image} className=" lg:h-[420px] rounded-lg shadow-lg" />
                 <div>
-                    <h4 className="text-2xl mb-2 font-semibold text-gray-500">Available for: <span className='text-[#23BE0A]'>{status}</span></h4>
+                    <h4 className="text-2xl mb-2 font-semibold text-gray-500">Available for: <span className='text-[#23BE0A] bg-[#23BE0A0D]'>{status}</span></h4>
                     <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold">{estate_title}</h1>
                     <p className='font-semibold my-4'><span>Segment: </span> {segment}</p>
                     <hr />
@@ -32,7 +32,7 @@ const EstateDetails = () => {
                         facilities?.map((facility, idx) => <span className="text-[#23BE0A] bg-[#23BE0A0D] px-4 py-2" key={idx}>{facility}</span>)
                     }</p>
                     <hr />
-                    <p className='font-medium'><span className='font-bold'>Location:</span> {location}</p>
+                    <p className='font-medium mt-4'><span className='font-bold'>Location:</span> {location}</p>
                     <p className="py-6">{description}</p>
                     <p className='font-semibold flex gap-14 text-gray-600'><span>Area: {area}</span> <span>Price: {price}</span></p>
                 </div>

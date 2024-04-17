@@ -13,6 +13,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider.jsx';
 import EstateDetails from './components/Home/EstateDetails.jsx';
 import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
+import UserProfile from './components/UserProfile/UserProfile.jsx';
+import UpdateUserProfile from './components/UserProfile/UpdateUserProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
         path: "/estate-details/:id",
         element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>,
         loader: ()=> fetch('/estates.json')
+      },
+      {
+        path: "/user-profile",
+        element: <PrivateRoutes><UserProfile></UserProfile></PrivateRoutes>
+      },
+      {
+        path: "/update-profile",
+        element: <PrivateRoutes><UpdateUserProfile /></PrivateRoutes>
       }
     ]
   },

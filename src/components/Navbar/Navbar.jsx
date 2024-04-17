@@ -38,7 +38,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-black bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[8] p-2 shadow text-black bg-base-100 rounded-box w-52">
                         {navLinks}
                     </ul>
                 </div>
@@ -54,12 +54,12 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end " >
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar tooltip" data-tip={user?.displayName || user?.email}>
                             <div className="w-10 rounded-full ">
-                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img alt="Tailwind CSS Navbar component" src={user?.photoURL || ""} />
                             </div>
 
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm text-white font-bold dropdown-content bg-neutral w-32">
-                            <li className="hover:bg-gray-500"><Link>User Profile</Link></li>
+                            <li className="hover:bg-gray-500"><Link to="/user-profile">User Profile</Link></li>
                             <li className="hover:bg-gray-500"><Link to="/login"><button onClick={handleLogOut}>Logout</button></Link></li>
                         </ul>
                     </div>

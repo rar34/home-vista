@@ -19,7 +19,7 @@ const Banner = () => {
                 scrollbar={{ draggable: true }}
                 loop={true}
                 autoplay={
-                    { delay: 3000 }
+                    { delay: 2000 }
                 }
             >
 

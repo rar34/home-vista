@@ -9,9 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
-
     const navigate = useNavigate();
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const {
         register,
@@ -19,7 +18,8 @@ const Register = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        const { email, password } = data;
+        console.log("data inside registration", data)
+        const { email, password, name, photoURL } = data;
         if (password.length < 6) {
             return toast('Password must be 6 character long')
         }
@@ -30,10 +30,14 @@ const Register = () => {
             return toast("Your password should at least one lowercase character")
         }
         createUser(email, password)
-            .then(result => {
-                console.log(result.user)
-                navigate("/")
-                toast("User created successfully")
+            .then(() => {
+                updateUserProfile(name, photoURL)
+                    .then(() => {
+                        toast("User created successfully")
+                        // window.location.reload()
+                        navigate("/")
+
+                    })
             })
             .catch(error => {
                 console.log(error)
