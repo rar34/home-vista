@@ -14,7 +14,7 @@ const UserProfile = () => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title">Name: {displayName}</h2>
                 <p>Email: {email}</p>
-                <Link to="/update-profile"><button className="btn btn-success">Update Profile</button></Link>
+                <Link to="/update-profile"><button className="btn text-white btn-success">Update Profile</button></Link>
             </div>
         </div>
     );

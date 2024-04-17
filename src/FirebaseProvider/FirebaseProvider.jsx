@@ -55,11 +55,11 @@ const FirebaseProvider = ({ children }) => {
     // Observer
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
+     
                 // setLoading(false)
                 setUser(user)
                 setLoading(false)
-            }
+    
         });
         return () => {
             unSubscribe();

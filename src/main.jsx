@@ -15,6 +15,7 @@ import EstateDetails from './components/Home/EstateDetails.jsx';
 import PrivateRoutes from './components/Routes/PrivateRoutes.jsx';
 import UserProfile from './components/UserProfile/UserProfile.jsx';
 import UpdateUserProfile from './components/UserProfile/UpdateUserProfile.jsx';
+import ContactUs from './components/ContactUs/ContactUs.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/update-profile",
         element: <PrivateRoutes><UpdateUserProfile /></PrivateRoutes>
+      },
+      {
+        path: "/contact",
+        element: <PrivateRoutes><ContactUs /></PrivateRoutes>
       }
     ]
   },
