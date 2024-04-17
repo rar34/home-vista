@@ -3,16 +3,13 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
-import { useNavigate, useLocation  } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const Login = () => {
-    useEffect(() => {
-        document.title ="Home Vista | Login"
-    }, []);
+
 
     const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const location = useLocation();
@@ -30,7 +27,6 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 toast("login successful")
-                alert("login successful")
                 navigate(location?.state || "/")
             })
             .catch(() => {
@@ -42,11 +38,9 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then((result) => {
-                toast("login successful")
-                alert("login successful")
                 if (result.user) {
+                    toast("login successful")
                     navigate(location?.state || "/")
-                    // <Navigate to={location?.state || "/"}></Navigate>
                 }
             })
             .catch(() => {
@@ -57,17 +51,19 @@ const Login = () => {
     // sign in with github
     const handleGitHubLogin = () => {
         gitHubLogin()
-            .then((result) => {
-                toast("login successful")
-                alert("login successful")
-                if (result.user) {
+            .then(() => {
+                
+                    toast("login successful")
                     navigate(location?.state || "/")
-                }
+                
             })
             .catch(() => {
                 toast("invalid-credential")
             })
     }
+    useEffect(() => {
+        document.title = "Home Vista | Login"
+    }, []);
 
     return (
         <div className="w-full md:w-1/2 mx-auto bg-base-200 md:p-6 rounded-lg my-14">
@@ -104,7 +100,6 @@ const Login = () => {
                         <p>Do not have an account ? <Link className="text-[#1DD100] font-bold" to="/register">Sign Up</Link> for free</p>
                     </div>
                 </div>
-                <ToastContainer />
             </div>
         </div>
     );

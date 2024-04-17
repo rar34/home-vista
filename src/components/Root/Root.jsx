@@ -2,6 +2,9 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { Outlet } from "react-router-dom";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -13,6 +16,7 @@ const Root = () => {
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
+            <ToastContainer />
         </div>
     );
 };

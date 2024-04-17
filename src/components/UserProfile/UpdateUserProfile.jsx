@@ -8,9 +8,7 @@ import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const UpdateUserProfile = () => {
 
-    useEffect(() => {
-        document.title ="Home Vista | UpdateProfile"
-    }, []);
+    
 
     const navigate = useNavigate()
     const { user, updateUserProfile } = useContext(AuthContext)
@@ -30,6 +28,9 @@ const UpdateUserProfile = () => {
        
         
     }
+    useEffect(() => {
+        document.title ="Home Vista | UpdateProfile"
+    }, []);
 
     return (
         <div className="w-full md:w-1/2 mx-auto bg-base-200 md:p-6 rounded-lg my-14">

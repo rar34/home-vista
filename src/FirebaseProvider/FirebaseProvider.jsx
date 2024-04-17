@@ -5,8 +5,6 @@ import auth from '../firebase/firebase.config';
 
 
 
-
-
 export const AuthContext = createContext(null);
 
 // provider

@@ -4,14 +4,11 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
+
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-
-    useEffect(() => {
-        document.title = "Home Vista | Register"
-    }, []);
 
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
@@ -49,7 +46,9 @@ const Register = () => {
                 toast(error.message)
             })
     }
-
+    useEffect(() => {
+        document.title = "Home Vista | Register"
+    }, []);
 
     return (
         <div className="w-full md:w-1/2 mx-auto bg-base-200 md:p-6 rounded-lg my-14">
@@ -104,7 +103,6 @@ const Register = () => {
                     <p>Already have an account ? <Link className="text-[#1DD100] font-bold" to="/login">Login</Link></p>
                 </div>
 
-                <ToastContainer />
             </div>
         </div>
     );

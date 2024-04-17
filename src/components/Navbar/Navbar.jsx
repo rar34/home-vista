@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
 
@@ -9,6 +11,7 @@ const Navbar = () => {
     const handleLogOut = () => {
         logOut()
             .then(result => {
+                toast("log out successful")
                 console.log(result.user)
             })
             .catch(error => {
