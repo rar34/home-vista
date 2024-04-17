@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 
 
 const ContactUs = () => {
+    useEffect(() => {
+        document.title ="Home Vista | ContactUs"
+    }, []);
 
     return (
         <div className="my-10">

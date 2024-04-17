@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,6 +7,11 @@ import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 
 const UpdateUserProfile = () => {
+
+    useEffect(() => {
+        document.title ="Home Vista | UpdateProfile"
+    }, []);
+
     const navigate = useNavigate()
     const { user, updateUserProfile } = useContext(AuthContext)
     const { displayName, photoURL } = user;

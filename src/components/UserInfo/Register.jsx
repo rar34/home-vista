@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -8,6 +8,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = "Home Vista | Register"
+    }, []);
+
     const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate();
     const { createUser, updateUserProfile } = useContext(AuthContext)

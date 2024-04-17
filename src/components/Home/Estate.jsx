@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Estate = ({ estate }) => {
     const { id, estate_title, image, status, description, segment, area, price } = estate;
-    console.log(estate);
     return (
         <div id='products' className="card bg-base-100 shadow-md" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1500">
             <figure className='relative'>

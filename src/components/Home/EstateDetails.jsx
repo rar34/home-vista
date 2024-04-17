@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useLoaderData } from "react-router-dom";
 
 const EstateDetails = () => {
+
+    
     const [singleEstate, setSingleEstate] = useState({});
     const estates = useLoaderData();
-    console.log(singleEstate)
     const { id } = useParams();
     const idInt = parseInt(id);
 
@@ -15,6 +16,7 @@ const EstateDetails = () => {
             const estate = estates.find(estate => estate.id === idInt);
             setSingleEstate(estate);
         }
+        document.title =`Home Vista | Estate Details ${idInt}`
     }, [estates, idInt]);
 
     const { estate_title, image, status, description, segment, area, price, location, facilities } = singleEstate || {};

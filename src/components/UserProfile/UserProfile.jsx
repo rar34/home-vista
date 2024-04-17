@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
+    useEffect(() => {
+        document.title ="Home Vista | UserProfile"
+    }, []);
 
     const { user } = useContext(AuthContext)
     const { displayName, email, photoURL } = user;

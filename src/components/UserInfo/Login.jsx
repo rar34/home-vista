@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
 import { useNavigate, useLocation  } from "react-router-dom";
@@ -10,6 +10,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
+    useEffect(() => {
+        document.title ="Home Vista | Login"
+    }, []);
 
     const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const location = useLocation();
@@ -27,6 +30,7 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 toast("login successful")
+                alert("login successful")
                 navigate(location?.state || "/")
             })
             .catch(() => {
@@ -39,6 +43,7 @@ const Login = () => {
         googleLogin()
             .then((result) => {
                 toast("login successful")
+                alert("login successful")
                 if (result.user) {
                     navigate(location?.state || "/")
                     // <Navigate to={location?.state || "/"}></Navigate>
@@ -54,6 +59,7 @@ const Login = () => {
         gitHubLogin()
             .then((result) => {
                 toast("login successful")
+                alert("login successful")
                 if (result.user) {
                     navigate(location?.state || "/")
                 }
