@@ -1,4 +1,5 @@
-Name: Home Vista
+<h1>Name: Home Vista</h1>
+<p>Home Vista is a real estate related website where people can buy properties or rent properties.</p>
 Live link: https://home-vista-fb609.web.app/
 
 - This website is about a real estate related website that one can search his/her residential for rent or can buy
@@ -12,3 +13,10 @@ Packages used to developed this project
 -  AOS Package
 -  React Hook form
 -  Swiper slider
+
+
+<h4>If you want to clone and run it in your local server</h4>
+
+-> git clone
+-> npm install
+-> npm run dev
