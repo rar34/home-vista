@@ -29,6 +29,6 @@ Packages used to developed this project
 
 <h4>If you want to clone and run it in your local server</h4>
 
--> git clone
--> npm install
+-> git clone <br/>
+-> npm install <br/>
 -> npm run dev
